@@ -30,11 +30,11 @@ extension UIImage
 {
     static var cache = NSCache<NSString, UIImage>()
     
-    func blurEffect(key: String, radius: Int = 25, complete: @escaping ImageProcessProc)
+    func blurEffect(key: String = "bgimage", radius: Int = 80, complete: ImageProcessProc? = nil)
     {
         if let image = UIImage.cache.object(forKey: key as NSString)
         {
-            complete(image)
+            complete?(image)
             return
         }
         
@@ -55,7 +55,7 @@ extension UIImage
                             let processedImage = UIImage(cgImage: cgimg)
                             UIImage.cache.setObject(processedImage, forKey: key as NSString)
                             DispatchQueue.main.async {
-                                complete(processedImage)
+                                complete?(processedImage)
                             }
                         }
                     }

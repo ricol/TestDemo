@@ -22,7 +22,7 @@ class LoginViewController: BaseViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         btnLogin.startColor = UIColor(hexString: "5D9DFF")
         btnLogin.endColor = UIColor(hexString: "9EBCEA")

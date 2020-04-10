@@ -27,6 +27,7 @@ class BaseViewController: UIViewController
             view.sendSubviewToBack(imageView)
             bgImage = image
             bgImageView = imageView
+            image.blurEffect()
         }
     }
 
