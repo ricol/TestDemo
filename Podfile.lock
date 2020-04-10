@@ -1,0 +1,32 @@
+PODS:
+  - iOSCommon (0.5.0)
+  - SkyFloatingLabelTextField (3.8.0)
+  - SwiftHEXColors (1.4.0)
+
+DEPENDENCIES:
+  - iOSCommon (from `https://github.com/ricol/iOSCommon.git`)
+  - SkyFloatingLabelTextField
+  - SwiftHEXColors
+
+SPEC REPOS:
+  trunk:
+    - SkyFloatingLabelTextField
+    - SwiftHEXColors
+
+EXTERNAL SOURCES:
+  iOSCommon:
+    :git: https://github.com/ricol/iOSCommon.git
+
+CHECKOUT OPTIONS:
+  iOSCommon:
+    :commit: efa9ed145b790135713d77b721b3316b9207ed86
+    :git: https://github.com/ricol/iOSCommon.git
+
+SPEC CHECKSUMS:
+  iOSCommon: 6795adccb0c8b44524a4019e5362e24e0055b746
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
+  SwiftHEXColors: c5baa53cf2412ce6391633ce74999437cc025efc
+
+PODFILE CHECKSUM: 7f52c6b6d3d4e4c7b98e51576ab9e0018d71e991
+
+COCOAPODS: 1.8.4
