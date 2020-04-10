@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: BaseViewController
 {
     @IBOutlet weak var imageViewProfile: UIImageView!
+    @IBOutlet weak var graph: ViewGraph!
     
     override func viewDidLoad()
     {
@@ -28,8 +29,24 @@ class MainViewController: BaseViewController
         }
         
         imageViewProfile.roundCorners()
+        graph.backgroundColor = UIColor.clear
+        graph.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
-
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        graph.updateValue(20)
+    }
+    
+    @objc func handleTap()
+    {
+        let base = graph.max - graph.min
+        let number: CGFloat = CGFloat(arc4random() % UInt32(base)) + graph.min
+        graph.updateValue(number)
+    }
+    
     @IBAction func btnProfileOnTapped(_ sender: Any)
     {
         self.navigationController?.pop(animated: true)

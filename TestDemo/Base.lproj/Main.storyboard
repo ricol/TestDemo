@@ -138,9 +138,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmB-ww-dBW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmB-ww-dBW" customClass="ViewGraph" customModule="TestDemo" customModuleProvider="target">
                                 <rect key="frame" x="50" y="291" width="314" height="314"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vmB-ww-dBW" secondAttribute="height" multiplier="1:1" id="Ds6-CU-NE8"/>
                                 </constraints>
@@ -169,6 +169,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1qt-fR-YCM"/>
                     <connections>
+                        <outlet property="graph" destination="vmB-ww-dBW" id="LLd-kA-m4b"/>
                         <outlet property="imageViewProfile" destination="Riy-Aq-LRB" id="4v2-4z-P2m"/>
                     </connections>
                 </viewController>
