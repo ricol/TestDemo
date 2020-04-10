@@ -20,7 +20,7 @@ class BaseViewController: UIViewController
         {
             let imageView = UIImageView(image: image)
             view.addSubview(imageView)
-            NSLayoutConstraint.fullScreenConstraint(view: imageView, parent: view)
+            let _ = NSLayoutConstraint.fullScreenConstraint(view: imageView, parent: view)
             view.sendSubviewToBack(imageView)
         }
     }

@@ -20,6 +20,7 @@
 		ED30A5D92440496100F94893 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30A5D82440496100F94893 /* BaseViewController.swift */; };
 		ED30A5DB2440497200F94893 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30A5DA2440497200F94893 /* LoginViewController.swift */; };
 		ED30A5DD2440498E00F94893 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30A5DC2440498E00F94893 /* MainViewController.swift */; };
+		ED60F07B2440543B0020A099 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60F07A2440543B0020A099 /* extensions.swift */; };
 		ED84CF8D24404C4200089000 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84CF8C24404C4200089000 /* LoginButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		ED30A5D82440496100F94893 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ED30A5DA2440497200F94893 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED30A5DC2440498E00F94893 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ED60F07A2440543B0020A099 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		ED84CF8C24404C4200089000 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		FA6D1C7A40FDAC01F9DEE1B3 /* Pods_TestDemo_TestDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo_TestDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				ED30A5DA2440497200F94893 /* LoginViewController.swift */,
 				ED30A5DC2440498E00F94893 /* MainViewController.swift */,
 				ED84CF8C24404C4200089000 /* LoginButton.swift */,
+				ED60F07A2440543B0020A099 /* extensions.swift */,
 			);
 			path = TestDemo;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				ED30A5D92440496100F94893 /* BaseViewController.swift in Sources */,
 				ED84CF8D24404C4200089000 /* LoginButton.swift in Sources */,
 				ED30A5A92440493300F94893 /* AppDelegate.swift in Sources */,
+				ED60F07B2440543B0020A099 /* extensions.swift in Sources */,
 				ED30A5DD2440498E00F94893 /* MainViewController.swift in Sources */,
 				ED30A5DB2440497200F94893 /* LoginViewController.swift in Sources */,
 				ED30A5AB2440493300F94893 /* SceneDelegate.swift in Sources */,

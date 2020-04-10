@@ -28,20 +28,40 @@ class LoginViewController: BaseViewController
         btnLogin.endColor = UIColor(hexString: "9EBCEA")
         btnLogin.roundCornersForRadius(radius: 15)
         btnLogin.alpha = 0.5
+        btnLogin.isEnabled = false
     
         tfUserName.placeholder = "Username"
+        tfUserName.placeholderColor = UIColor.appWhiteColor()
+        tfUserName.titleColor = UIColor.appWhiteColor()
+        tfUserName.textColor = UIColor.appWhiteColor()
+        tfUserName.lineColor = UIColor.appWhiteColor()
+        tfUserName.selectedTitleColor = UIColor.appWhiteColor()
+        tfUserName.selectedLineColor = UIColor.appWhiteColor()
+        
         tfPassword.placeholder = "Password"
+        tfPassword.placeholderColor = UIColor.appWhiteColor()
+        tfPassword.titleColor = UIColor.appWhiteColor()
+        tfPassword.textColor = UIColor.appWhiteColor()
+        tfPassword.lineColor = UIColor.appWhiteColor()
+        tfPassword.selectedTitleColor = UIColor.appWhiteColor()
+        tfPassword.selectedLineColor = UIColor.appWhiteColor()
+        
+        tfUserName.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        tfPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc func textFieldDidChange(_ textfield: UITextField)
+    {
+        if let username = tfUserName.text, let password = tfPassword.text
+        {
+            let verified = username == self.username && password == self.password
+            btnLogin.alpha = verified ? 1 : 0.5
+            btnLogin.isEnabled = verified
+        }
     }
 
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
     @IBAction func btnLoginOnTapped(_: Any)
-    {}
+    {
+        
+    }
 }
