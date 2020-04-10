@@ -10,20 +10,28 @@ import UIKit
 
 class MainViewController: BaseViewController
 {
+    @IBOutlet weak var imageViewProfile: UIImageView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        bgImageView?.image = nil
+        if let image = bgImage
+        {
+            image.blurEffect(key: "bgimage", radius: 80, complete: { (image) in
+                let delta: CGFloat = 130
+                self.bgImageView?.image = image.croppedImage(rect: CGRect(x: delta, y: delta, width: image.size.width - 2 * delta, height: image.size.height - 2 * delta))
+            })
+        }
+        
+        imageViewProfile.roundCorners()
     }
 
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func btnProfileOnTapped(_ sender: Any)
+    {
+        self.navigationController?.pop(animated: true)
+    }
 }

@@ -11,6 +11,9 @@ import UIKit
 
 class BaseViewController: UIViewController
 {
+    var bgImage: UIImage?
+    var bgImageView: UIImageView?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -22,6 +25,8 @@ class BaseViewController: UIViewController
             view.addSubview(imageView)
             let _ = NSLayoutConstraint.fullScreenConstraint(view: imageView, parent: view)
             view.sendSubviewToBack(imageView)
+            bgImage = image
+            bgImageView = imageView
         }
     }
 
