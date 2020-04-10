@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import UICountingLabel
 
 class ViewGraph: UIView
 {
+    @IBOutlet var viewMain: UIView!
+    @IBOutlet weak var lblValue: UICountingLabel!
+    
     let key = "stroke"
     let line_width: CGFloat = 30
+    let animation_time: Double = 1
     
-    var max: CGFloat = 100
-    var min: CGFloat = 0
-    private var current: CGFloat = 0
+    var max: Int = 100
+    var min: Int = 0
+    private var current: Int = 0
     
     private lazy var shape: CAShapeLayer =
     {
@@ -29,7 +34,7 @@ class ViewGraph: UIView
         track.fillColor = UIColor.clear.cgColor
         track.strokeStart = 0
         track.strokeEnd = 1
-        self.layer.addSublayer(track)
+        viewMain.layer.addSublayer(track)
         
         //show the circle
         let s = CAShapeLayer()
@@ -40,30 +45,57 @@ class ViewGraph: UIView
         s.lineCap = .round
         s.strokeStart = 0
         s.strokeEnd = 0
-        self.layer.addSublayer(s)
+        viewMain.layer.addSublayer(s)
         return s
     }()
     
     private lazy var animation: CABasicAnimation =
     {
         let a = CABasicAnimation(keyPath: "strokeEnd")
-        a.duration = 1
+        a.duration = animation_time
         a.fillMode = .forwards
         a.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         a.isRemovedOnCompletion = false
         return a
     }()
     
-    func updateValue(_ value: CGFloat)
+    override init(frame: CGRect)
+    {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func setup()
+    {
+        Bundle.main.loadNibNamed("ViewGraph", owner: self, options: nil)
+        viewMain.frame = bounds
+        viewMain.backgroundColor = UIColor.clear
+        addSubview(viewMain)
+        let _ = NSLayoutConstraint.fullScreenConstraint(view: viewMain, parent: self)
+    }
+    
+    // MARK: - Public Methods
+    
+    func updateValue(_ value: Int)
     {
         print("update to \(value)...")
         
         //use animation to draw from current value to the new value
-        animation.fromValue = (current - min) * 1.0 / (max - min)
-        animation.toValue = (value - min) * 1.0 / (max - min)
+        animation.fromValue = CGFloat(current - min) * 1.0 / CGFloat(max - min)
+        animation.toValue = CGFloat(value - min) * 1.0 / CGFloat(max - min)
         shape.removeAnimation(forKey: key)
         shape.add(animation, forKey: key)
         
+        lblValue.format = "%d"
+        lblValue.countFromCurrentValue(to: CGFloat(value), withDuration: animation_time)
         current = value
     }
 }

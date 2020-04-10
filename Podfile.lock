@@ -2,16 +2,19 @@ PODS:
   - iOSCommon (0.5.0)
   - SkyFloatingLabelTextField (3.8.0)
   - SwiftHEXColors (1.4.0)
+  - UICountingLabel (1.4.1)
 
 DEPENDENCIES:
   - iOSCommon (from `https://github.com/ricol/iOSCommon.git`)
   - SkyFloatingLabelTextField
   - SwiftHEXColors
+  - UICountingLabel
 
 SPEC REPOS:
   trunk:
     - SkyFloatingLabelTextField
     - SwiftHEXColors
+    - UICountingLabel
 
 EXTERNAL SOURCES:
   iOSCommon:
@@ -26,7 +29,8 @@ SPEC CHECKSUMS:
   iOSCommon: 6795adccb0c8b44524a4019e5362e24e0055b746
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SwiftHEXColors: c5baa53cf2412ce6391633ce74999437cc025efc
+  UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
 
-PODFILE CHECKSUM: 7f52c6b6d3d4e4c7b98e51576ab9e0018d71e991
+PODFILE CHECKSUM: 7cf867a2697c1eb41185d716b3723cf1603aec2c
 
 COCOAPODS: 1.8.4

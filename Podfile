@@ -8,6 +8,7 @@ target 'TestDemo' do
   pod 'iOSCommon', :git => 'https://github.com/ricol/iOSCommon.git'
   pod 'SkyFloatingLabelTextField'
 	pod 'SwiftHEXColors'
+  pod 'UICountingLabel'
   # Pods for TestDemo
 
   target 'TestDemoTests' do

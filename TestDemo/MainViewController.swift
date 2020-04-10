@@ -43,7 +43,7 @@ class MainViewController: BaseViewController
     @objc func handleTap()
     {
         let base = graph.max - graph.min
-        let number: CGFloat = CGFloat(arc4random() % UInt32(base)) + graph.min
+        let number = Int(arc4random() % UInt32(base)) + graph.min
         graph.updateValue(number)
     }
     
