@@ -11,7 +11,6 @@
 		A3367284D6811494934E06FB /* Pods_TestDemo_TestDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6D1C7A40FDAC01F9DEE1B3 /* Pods_TestDemo_TestDemoUITests.framework */; };
 		B560719846B95CEEBC05971F /* Pods_TestDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A61602459EE20880A02E28 /* Pods_TestDemoTests.framework */; };
 		ED30A5A92440493300F94893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30A5A82440493300F94893 /* AppDelegate.swift */; };
-		ED30A5AB2440493300F94893 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30A5AA2440493300F94893 /* SceneDelegate.swift */; };
 		ED30A5B02440493300F94893 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED30A5AE2440493300F94893 /* Main.storyboard */; };
 		ED30A5B22440493400F94893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED30A5B12440493400F94893 /* Assets.xcassets */; };
 		ED30A5B52440493400F94893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED30A5B32440493400F94893 /* LaunchScreen.storyboard */; };
@@ -24,6 +23,7 @@
 		ED60F07F244069970020A099 /* ViewGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60F07E244069970020A099 /* ViewGraph.swift */; };
 		ED60F081244094BA0020A099 /* ViewGraph.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED60F080244094BA0020A099 /* ViewGraph.xib */; };
 		ED84CF8D24404C4200089000 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84CF8C24404C4200089000 /* LoginButton.swift */; };
+		EDD84B622440B8CB004817E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD84B612440B8CB004817E7 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,6 @@
 		C5A61602459EE20880A02E28 /* Pods_TestDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED30A5A52440493300F94893 /* TestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED30A5A82440493300F94893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED30A5AA2440493300F94893 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ED30A5AF2440493300F94893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED30A5B12440493400F94893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED30A5B42440493400F94893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		ED60F07E244069970020A099 /* ViewGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewGraph.swift; sourceTree = "<group>"; };
 		ED60F080244094BA0020A099 /* ViewGraph.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewGraph.xib; sourceTree = "<group>"; };
 		ED84CF8C24404C4200089000 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		EDD84B612440B8CB004817E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA6D1C7A40FDAC01F9DEE1B3 /* Pods_TestDemo_TestDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo_TestDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,7 +144,7 @@
 				EDD84B6024409F16004817E7 /* Utils */,
 				ED60F07D244069830020A099 /* CustomView */,
 				ED30A5A82440493300F94893 /* AppDelegate.swift */,
-				ED30A5AA2440493300F94893 /* SceneDelegate.swift */,
+				EDD84B612440B8CB004817E7 /* SceneDelegate.swift */,
 				ED30A5AE2440493300F94893 /* Main.storyboard */,
 				ED30A5B12440493400F94893 /* Assets.xcassets */,
 				ED30A5B32440493400F94893 /* LaunchScreen.storyboard */,
@@ -449,8 +449,8 @@
 				ED60F07B2440543B0020A099 /* extensions.swift in Sources */,
 				ED30A5DD2440498E00F94893 /* MainViewController.swift in Sources */,
 				ED30A5DB2440497200F94893 /* LoginViewController.swift in Sources */,
-				ED30A5AB2440493300F94893 /* SceneDelegate.swift in Sources */,
 				ED60F07F244069970020A099 /* ViewGraph.swift in Sources */,
+				EDD84B622440B8CB004817E7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

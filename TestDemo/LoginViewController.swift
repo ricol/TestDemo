@@ -15,9 +15,13 @@ class LoginViewController: BaseViewController
     @IBOutlet var tfPassword: SkyFloatingLabelTextField!
     @IBOutlet var tfUserName: SkyFloatingLabelTextField!
     @IBOutlet var btnLogin: LoginButton!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var constraintBottom: NSLayoutConstraint!
     
     let username = "climber@gmail.com"
     let password = "climber"
+    let animation_time: TimeInterval = 0.3
+    var originalValue: CGFloat?
 
     override func viewDidLoad()
     {
@@ -39,6 +43,7 @@ class LoginViewController: BaseViewController
         tfUserName.selectedLineColor = UIColor.appTextFieldContent()
         
         tfPassword.placeholder = "Password"
+        tfPassword.isSecureTextEntry = true
         tfPassword.placeholderColor = UIColor.appTextFieldPlaceholder()
         tfPassword.titleColor = UIColor.appTextFieldPlaceholder()
         tfPassword.textColor = UIColor.appTextFieldContent()
@@ -48,6 +53,17 @@ class LoginViewController: BaseViewController
         
         tfUserName.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         tfPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+        self.originalValue = self.constraintBottom.constant
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notif:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notif:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func textFieldDidChange(_ textfield: UITextField)
@@ -55,13 +71,41 @@ class LoginViewController: BaseViewController
         if let username = tfUserName.text, let password = tfPassword.text
         {
             let verified = username == self.username && password == self.password
-            btnLogin.alpha = verified ? 1 : 0.5
+            UIView.animate(withDuration: animation_time) {
+                self.btnLogin.alpha = verified ? 1 : 0.5
+            }
             btnLogin.isEnabled = verified
         }
     }
-
-    @IBAction func btnLoginOnTapped(_: Any)
+    
+    @objc func keyboardWillShow(notif: NSNotification)
     {
-        
+        if let keyboardSize = (notif.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, let value = self.originalValue
+        {
+            self.constraintBottom.constant = value + keyboardSize.height
+            UIView.animate(withDuration: animation_time) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notif: NSNotification)
+    {
+        if let v = self.originalValue
+        {
+            self.constraintBottom.constant = v
+            UIView.animate(withDuration: animation_time) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @IBAction func btnLoginOnTapped(_ sender: Any)
+    {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).getVC(vc: "MainViewController") as? MainViewController
+        {
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.view.endEditing(true)
+        }
     }
 }
