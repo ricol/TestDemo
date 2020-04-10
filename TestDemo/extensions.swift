@@ -12,8 +12,13 @@ import SwiftHEXColors
 
 extension UIColor
 {
-    static func appWhiteColor() -> UIColor
+    static func appTextFieldContent() -> UIColor
     {
         return UIColor(hexString: "E5E5E5") ?? UIColor.white
+    }
+    
+    static func appTextFieldPlaceholder() -> UIColor
+    {
+        return UIColor(hexString: "7B7B7B") ?? UIColor.lightGray
     }
 }

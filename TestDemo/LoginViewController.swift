@@ -31,20 +31,20 @@ class LoginViewController: BaseViewController
         btnLogin.isEnabled = false
     
         tfUserName.placeholder = "Username"
-        tfUserName.placeholderColor = UIColor.appWhiteColor()
-        tfUserName.titleColor = UIColor.appWhiteColor()
-        tfUserName.textColor = UIColor.appWhiteColor()
-        tfUserName.lineColor = UIColor.appWhiteColor()
-        tfUserName.selectedTitleColor = UIColor.appWhiteColor()
-        tfUserName.selectedLineColor = UIColor.appWhiteColor()
+        tfUserName.placeholderColor = UIColor.appTextFieldPlaceholder()
+        tfUserName.titleColor = UIColor.appTextFieldPlaceholder()
+        tfUserName.textColor = UIColor.appTextFieldContent()
+        tfUserName.lineColor = UIColor.appTextFieldContent()
+        tfUserName.selectedTitleColor = UIColor.appTextFieldPlaceholder()
+        tfUserName.selectedLineColor = UIColor.appTextFieldContent()
         
         tfPassword.placeholder = "Password"
-        tfPassword.placeholderColor = UIColor.appWhiteColor()
-        tfPassword.titleColor = UIColor.appWhiteColor()
-        tfPassword.textColor = UIColor.appWhiteColor()
-        tfPassword.lineColor = UIColor.appWhiteColor()
-        tfPassword.selectedTitleColor = UIColor.appWhiteColor()
-        tfPassword.selectedLineColor = UIColor.appWhiteColor()
+        tfPassword.placeholderColor = UIColor.appTextFieldPlaceholder()
+        tfPassword.titleColor = UIColor.appTextFieldPlaceholder()
+        tfPassword.textColor = UIColor.appTextFieldContent()
+        tfPassword.lineColor = UIColor.appTextFieldContent()
+        tfPassword.selectedTitleColor = UIColor.appTextFieldPlaceholder()
+        tfPassword.selectedLineColor = UIColor.appTextFieldContent()
         
         tfUserName.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         tfPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
