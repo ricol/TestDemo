@@ -31,13 +31,15 @@ class MainViewController: BaseViewController
         imageViewProfile.roundCorners()
         graph.backgroundColor = UIColor.clear
         graph.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        
+        graph.max = 50000
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
         
-        graph.updateValue(20)
+        graph.updateValue(14000)
     }
     
     @objc func handleTap()

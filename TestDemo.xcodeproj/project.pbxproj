@@ -141,7 +141,8 @@
 		ED30A5A72440493300F94893 /* TestDemo */ = {
 			isa = PBXGroup;
 			children = (
-				ED60F07D244069830020A099 /* ViewGraph */,
+				EDD84B6024409F16004817E7 /* Utils */,
+				ED60F07D244069830020A099 /* CustomView */,
 				ED30A5A82440493300F94893 /* AppDelegate.swift */,
 				ED30A5AA2440493300F94893 /* SceneDelegate.swift */,
 				ED30A5AE2440493300F94893 /* Main.storyboard */,
@@ -151,8 +152,6 @@
 				ED30A5D82440496100F94893 /* BaseViewController.swift */,
 				ED30A5DA2440497200F94893 /* LoginViewController.swift */,
 				ED30A5DC2440498E00F94893 /* MainViewController.swift */,
-				ED84CF8C24404C4200089000 /* LoginButton.swift */,
-				ED60F07A2440543B0020A099 /* extensions.swift */,
 			);
 			path = TestDemo;
 			sourceTree = "<group>";
@@ -175,13 +174,22 @@
 			path = TestDemoUITests;
 			sourceTree = "<group>";
 		};
-		ED60F07D244069830020A099 /* ViewGraph */ = {
+		ED60F07D244069830020A099 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
 				ED60F07E244069970020A099 /* ViewGraph.swift */,
 				ED60F080244094BA0020A099 /* ViewGraph.xib */,
 			);
-			path = ViewGraph;
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		EDD84B6024409F16004817E7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ED84CF8C24404C4200089000 /* LoginButton.swift */,
+				ED60F07A2440543B0020A099 /* extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F977EDFA9C68631E03858019 /* Frameworks */ = {

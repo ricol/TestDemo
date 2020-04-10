@@ -28,7 +28,7 @@ class LoginViewController: BaseViewController
         btnLogin.endColor = UIColor(hexString: "9EBCEA")
         btnLogin.roundCornersForRadius(radius: 15)
         btnLogin.alpha = 0.5
-//        btnLogin.isEnabled = false
+        btnLogin.isEnabled = false
     
         tfUserName.placeholder = "Username"
         tfUserName.placeholderColor = UIColor.appTextFieldPlaceholder()
