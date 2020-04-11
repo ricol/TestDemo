@@ -86,6 +86,7 @@ class ViewGraph: UIView
     
     func updateValue(_ value: Int)
     {
+        if value < min || value > max { return }
         print("update to \(value)...")
         
         //use animation to draw from current value to the new value
