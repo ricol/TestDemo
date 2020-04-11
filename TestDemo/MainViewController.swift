@@ -10,20 +10,47 @@ import UIKit
 
 class MainViewController: BaseViewController
 {
+    @IBOutlet weak var imageViewProfile: UIImageView!
+    @IBOutlet weak var graph: ViewGraph!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        bgImageView?.image = nil
+        if let image = bgImage
+        {
+            image.blurEffect(key: "bgimage", radius: 80, complete: { (image) in
+                let delta: CGFloat = 130
+                self.bgImageView?.image = image.croppedImage(rect: CGRect(x: delta, y: delta, width: image.size.width - 2 * delta, height: image.size.height - 2 * delta))
+            })
+        }
+        
+        imageViewProfile.roundCorners()
+        graph.backgroundColor = UIColor.clear
+        graph.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        
+        graph.max = 50000
     }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        graph.updateValue(14000)
+    }
+    
+    @objc func handleTap()
+    {
+        let base = graph.max - graph.min
+        let number = Int(arc4random() % UInt32(base)) + graph.min
+        graph.updateValue(number)
+    }
+    
+    @IBAction func btnProfileOnTapped(_ sender: Any)
+    {
+        self.navigationController?.pop(animated: true)
+    }
 }
